@@ -16,7 +16,7 @@
     "react-point": "^3.0.1",
     "react-scripts": "3.4.3"
   },
-  "homepage": "https://nupurmaheshwari.github.io/",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
