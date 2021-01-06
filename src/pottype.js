@@ -1,5 +1,4 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import CustomButton from './customButton';
 import './index.css';
 //question: should this variable rlly be called constant??
@@ -18,7 +17,7 @@ class PotType extends React.Component {
 	}
 
 
-	handleClick = ev => { 
+	handleClick = ev => {
 		// map values (string constants) to appropriate button
 		let mappy = {[constant.RFI]: this._custombutton, [constant.VS_OPEN]: this._custombutton2, [constant.VS_3]: this._custombutton3, [constant.BVB]: this._custombutton4}
 		this.props.pToggleButtons(ev, mappy)
@@ -27,12 +26,11 @@ class PotType extends React.Component {
 		this.props.updatePotState(ev.currentTarget.value)
 		// update state of submitValue in this class
 		this.setState ({submitValue: ev.currentTarget.value})
-		
+
 	}
 
 
 	render() {
-
 	    return (
 	      	<div>
 	       		<form onSubmit={this.onFormSubmit}>
@@ -45,10 +43,7 @@ class PotType extends React.Component {
 	        	</form>
 	      </div>
 	    );
-  		}
-}
-
-
-
+  	}
+};
 
 export default PotType;

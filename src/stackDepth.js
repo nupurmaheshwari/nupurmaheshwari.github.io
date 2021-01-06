@@ -1,5 +1,4 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import CustomButton from './customButton';
 import './index.css';
 import * as constant from './stringConstants';
@@ -16,7 +15,6 @@ class StackDepth extends React.Component {
 		}
 	}
 
-
 	handleClick = ev => { 
 		let mappy = {[constant._10]: this._custombutton, [constant._16]: this._custombutton2, [constant._21]:  this._custombutton3, [constant._26]: this._custombutton4, 
 			[constant._36]: this._custombutton5, [constant._51]: this._custombutton6, [constant._81]:  this._custombutton7}
@@ -29,9 +27,7 @@ class StackDepth extends React.Component {
 		//this.props.sSendData(this.state.submitValue
 	}
 
-
 	render() {
-
 	    return (
 	      	<div>
 	       		<form onSubmit={this.onFormSubmit}>
@@ -49,6 +45,5 @@ class StackDepth extends React.Component {
 	    );
 	}
 }
-
 
 export default StackDepth;

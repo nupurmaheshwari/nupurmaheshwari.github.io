@@ -1,10 +1,7 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import Button from '@material-ui/core/Button';
 import './index.css';
 
-          // main: '#DCDCDC',
-          // dark: '#808080',
 
 class CustomButton extends React.Component {
 
@@ -13,8 +10,10 @@ class CustomButton extends React.Component {
 
         // state of
         this.state = {
-        	color: '#DCDCDC',
-            disableToggle: false,        }
+        	color: '#564D8F',
+            disableToggle: false,
+            textColor: '#ffffff',
+        }
 
         this.clickedOn = this.clickedOn.bind(this)
         this.clickedOff = this.clickedOff.bind(this)
@@ -24,33 +23,32 @@ class CustomButton extends React.Component {
 
 
    	clickedOff() {
-   		this.setState({color: '#DCDCDC'})
+   		this.setState({color: '#564D8F'})
    	}
 
    	clickedOn() {
-   		this.setState({color: '#808080'})
+   		this.setState({color: '#A196DC'})
    	}
 
     disabled() {
-       this.setState({disableToggle: true})
-       this.setState({color: '#DCDCDC'})
+        this.setState({disableToggle: true})
+        this.setState({color: '#564D8F'})
     }
 
     enabled() {
-       this.setState({disableToggle: false})
+        this.setState({disableToggle: false})
     }
-
 
     // display individual button
   	render() {
   		return (
-            <Button 
-      			value = {this.props.value} 
+            <Button
+      			value = {this.props.value}
                 disabled = {this.state.disableToggle}
-      			style = {{backgroundColor: this.state.color}} 
+      			style = {{backgroundColor: this.state.color}}
       			onClick = {this.props.onClick}
-      			>
-	  		{this.props.value}
+                >
+	  		        {this.props.value}
   			</Button> )
   	}
 }

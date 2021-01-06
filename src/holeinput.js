@@ -1,6 +1,4 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
-//import CustomButton from './customButton';
 import './index.css';
 import TextField from '@material-ui/core/TextField';
 
@@ -11,30 +9,41 @@ class HoleInput extends React.Component {
 		super();
 
 		this.state = {
-			holeInputValue: ""
+			holeInputValue: "",
+         error: false
 		}
 	}
 
-
   	_handleTextFieldChange = (ev) => {
-  		this.setState({ holeInputValue: ev.target.value });
-
-        // update state of value in parents class bumfuck
+  		this.setState({holeInputValue: ev.target.value});
+		// if hole input value isn't either empty or valid, display error message
+		if (!ev.target.value.match(/^([AKQJakqj2-9]|10)([AKQJakqj2-9]|10)([osOS])$/) && !ev.target.value.match(/^$/)) {
+			this.setState({error: true})
+		}
+		else {
+			this.setState({error: false})
+		}
+      	// update state of hole input value in parents class bumfuck
 		this.props.updateHoleState(ev.currentTarget.value)
   	}
 
-
 	render() {
-		//className={classes.root}
 	    return (
 	    	<div className = "holeinput">
 	    	    <form noValidate autoComplete="off">
-     				 <TextField label="hole input" id="standard-size-small" defaultValue="" size="small" onChange={(ev)=>this._handleTextFieldChange(ev)}/>
+     				<TextField
+						error={this.state.error}
+						label="HOLE INPUT"
+						id="standard-size-small"
+						defaultValue=""
+						size="small"
+						onChange={(ev)=>this._handleTextFieldChange(ev)}
+						//helperText={this.state.error}
+					/>
     			</form>
     		</div>
 	    );
-  		}
+  	}
 }
-
 
 export default HoleInput;

@@ -1,5 +1,4 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import CustomButton from './customButton';
 import './index.css';
 import * as constant from './stringConstants';
@@ -15,7 +14,6 @@ class Hero extends React.Component {
 		}
 	}
 
-
 	handleClick = ev => { 
 		let mappy = {[constant.UTG]: this._custombutton, [constant.MP]: this._custombutton2, [constant.LJ]:  this._custombutton3, [constant.HJ]: this._custombutton4, 
 			[constant.CO]: this._custombutton5, [constant.BU]: this._custombutton6, [constant.SB]:  this._custombutton7, [constant.BB]: this._custombutton8}
@@ -28,7 +26,6 @@ class Hero extends React.Component {
 		this.setState ({submitValue: ev.currentTarget.value})
 		//this.props.vSendData(this.state.submitValue)
 	}
-
 
 	componentDidUpdate(props) {
 		// allVillainButtons is a dictionary of villain row buttons 
@@ -63,7 +60,6 @@ class Hero extends React.Component {
 				let button = vsOpenButtons[value1]
 				button.enabled()
 			}
-
 			// grey out based on VP<HP rule
 			// check if hero button has been selected
 			if (this.props.heroValue !== '') {
@@ -82,10 +78,8 @@ class Hero extends React.Component {
 					else {
 						button.disabled()
 					}
-
 				}
 			}
-		
 		}
 		else if (this.props.potValue === constant.VS_3) {
 			// disable first button when vs open clicked
@@ -115,15 +109,13 @@ class Hero extends React.Component {
 					}
 					// if villain key is equal to clicked hero button, change variable to false
 					if (value5 === this.props.heroValue) {afterHero = false}
-
 				}
 			}
 		}
-	}
+	};
 
 
 	render() {
-
 	    return (
 	      	<div>
 	       		<form onSubmit={this.onFormSubmit}>
@@ -141,7 +133,6 @@ class Hero extends React.Component {
 	      	</div>
 	    );
 	}
-}
-
+};
 
 export default Hero;

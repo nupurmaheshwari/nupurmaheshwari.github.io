@@ -1,5 +1,4 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import CustomButton from './customButton';
 import './index.css';
 import * as constant from './stringConstants';
@@ -16,7 +15,6 @@ class Hero extends React.Component {
 		}
 	}
 
-
 	handleClick = ev => { 
 		let mappy = {[constant.UTG]: this._custombutton, [constant.MP]: this._custombutton2, [constant.LJ]:  this._custombutton3, [constant.HJ]: this._custombutton4, 
 			[constant.CO]: this._custombutton5, [constant.BU]: this._custombutton6, [constant.SB]:  this._custombutton7, [constant.BB]: this._custombutton8}
@@ -28,7 +26,6 @@ class Hero extends React.Component {
 		this.setState ({submitValue: ev.currentTarget.value})
 		//this.props.hSendData(this.state.submitValue)
 	}
-
 
 	componentDidUpdate(props) {
 		// allHeroButtons is a dict of Hero row buttons 
@@ -70,14 +67,12 @@ class Hero extends React.Component {
 			for (var value2 in vsOpenButtons) {
 				let button = vsOpenButtons[value2]
 				button.enabled()
-
 			}
 		}
 	}
 
 
 	render() {
-
 	    return (
 	      	<div>
 	       		<form onSubmit={this.onFormSubmit}>
@@ -96,6 +91,5 @@ class Hero extends React.Component {
 	    );
 	}
 }
-
 
 export default Hero;
