@@ -17,8 +17,7 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "rnode index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "start": "node index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
